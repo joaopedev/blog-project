@@ -1,3 +1,4 @@
+function initTab(){
 const tabMenu = document.querySelectorAll('.js-tabmenu li');
 const tabContent = document.querySelectorAll('.js-tabcontent section');
 tabContent[0].classList.add('ativo');
@@ -19,5 +20,17 @@ tabMenu.forEach((itemMenu, index) =>{
     });
 });
 }
+}
+initTab();
+
+const accordionList = document.querySelectorAll('.js-accordion dt');
+console.log(accordionList);
 
 
+function activeAccordion(event){
+  this.nextElementSibling.classList.add('ativo');
+}
+
+accordionList.forEach((item)=>{
+    item.addEventListener('click', activeAccordion)
+})
