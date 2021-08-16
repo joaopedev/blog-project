@@ -73,10 +73,12 @@ if(sections.length){
 const windowMeio = window.innerHeight * 0.6;
 function animaScroll(){
     sections.forEach((section)=>{
-        const sectionTop = section.getBoundingClientRect().top - windowMeio;
+        const sectionTop = section.getBoundingClientRect().top;
         const isSectionVisible = (sectionTop - windowMeio) < 0 ;
         if(isSectionVisible){
             section.classList.add('ativo');
+        }else{
+            section.classList.remove('ativo');
         }
     })
 };
